@@ -11,6 +11,18 @@ backend/InventoryAPI/private-key.pem
 backend/InventoryAPI/bin/
 backend/InventoryAPI/obj/
 
+# Node / frontend build outputs
+**/node_modules/
+**/.next/
+**/out/
+**/dist/
+**/build/
+**/coverage/
+**/.vercel/
+**/.turbo/
+**/.parcel-cache/
+**/.vite/
+
 # Local env files
 .env*
 !.env.example
