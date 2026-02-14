@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System - Documentation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+        .sidebar h2 {
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .sidebar ul { list-style: none; }
+        .sidebar ul li { margin: 5px 0; }
+        .sidebar ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .sidebar ul li a:hover { background: #34495e; }
+        .sidebar ul li a.active { background: #3498db; }
+        .content {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        p { margin-bottom: 15px; }
+        ul, ol { margin-left: 25px; margin-bottom: 15px; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+        }
+        pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        pre code { background: none; color: #ecf0f1; padding: 0; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        table th {
+            background: #3498db;
+            color: white;
+        }
+        table tr:nth-child(even) { background: #f9f9f9; }
+        .alert {
+            padding: 12px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid;
+        }
+        .alert-info {
+            background: #ebf5fb;
+            border-color: #3498db;
+            color: #2874a6;
+        }
+        .alert-success {
+            background: #eafaf1;
+            border-color: #27ae60;
+            color: #1e8449;
+        }
+        .alert-warning {
+            background: #fef9e7;
+            border-color: #f39c12;
+            color: #b9770e;
+        }
+        @media print {
+            .sidebar { display: none; }
+            .content { margin: 0; padding: 20px; box-shadow: none; }
+            h1, h2, h3 { page-break-after: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2>📚 Documentation</h2>
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#tech">Tech Stack</a></li>
+                <li><a href="#setup">Setup</a></li>
+                <li><a href="#api">API Endpoints</a></li>
+                <li><a href="#deploy">Deployment</a></li>
+                <li><a href="#troubleshoot">Troubleshooting</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section id="intro">
+                <h1>📦 Inventory Management System</h1>
+                <p><strong>Version:</strong> 1.0.0 | <strong>Last Updated:</strong> 2024</p>
+                
+                <div class="alert alert-info">
+                    <strong>📖 About:</strong> Complete offline documentation. Use browser print (Ctrl+P) to save as PDF.
+                </div>
+
+                <h2>Introduction</h2>
+                <p>Enterprise-grade inventory management system for multi-location stock operations, sales, purchases, and customer/supplier management.</p>
+
+                <h3>Key Highlights</h3>
+                <ul>
+                    <li>✅ Multi-location inventory tracking</li>
+                    <li>✅ Point of Sale (POS) system</li>
+                    <li>✅ Customer & supplier management</li>
+                    <li>✅ Installment payment plans</li>
+                    <li>✅ Financial ledgers & cash register</li>
+                    <li>✅ Real-time dashboard & analytics</li>
+                </ul>
+            </section>
+
+            <section id="features">
+                <h2>✨ Features</h2>
+                <ul>
+                    <li><strong>Product Management:</strong> Add, edit, delete, search products with categories</li>
+                    <li><strong>Multi-Location:</strong> Warehouses and shops with stock tracking</li>
+                    <li><strong>Sales:</strong> POS system, sales transactions, refunds</li>
+                    <li><strong>Purchases:</strong> Purchase orders, supplier management</li>
+                    <li><strong>Customers:</strong> Customer database, ledger, credit management</li>
+                    <li><strong>Installments:</strong> Payment plans, overdue tracking</li>
+                    <li><strong>Financial:</strong> Supplier/customer ledgers, cash register</li>
+                    <li><strong>Dashboard:</strong> Real-time analytics, low stock alerts</li>
+                </ul>
+            </section>
+
+            <section id="tech">
+                <h2>🛠️ Tech Stack</h2>
+                <h3>Backend</h3>
+                <ul>
+                    <li><strong>.NET 9.0</strong> - Web API framework</li>
+                    <li><strong>MongoDB 7.0</strong> - NoSQL database</li>
+                    <li><strong>ASP.NET Core</strong> - Web framework</li>
+                </ul>
+                <h3>Frontend</h3>
+                <ul>
+                    <li><strong>Next.js 14</strong> - React framework</li>
+                    <li><strong>TypeScript</strong> - Type safety</li>
+                    <li><strong>Tailwind CSS</strong> - Styling</li>
+                    <li><strong>shadcn/ui</strong> - UI components</li>
+                </ul>
+            </section>
+
+            <section id="setup">
+                <h2>🚀 Setup</h2>
+                
+                <h3>Prerequisites</h3>
+                <ul>
+                    <li>.NET SDK 9.0+</li>
+                    <li>Node.js 18+</li>
+                    <li>MongoDB 6.0+</li>
+                </ul>
+
+                <h3>Quick Start</h3>
+                <h4>1. Start MongoDB</h4>
+                <pre><code># macOS
+brew services start mongodb-community
+
+# Linux
+sudo systemctl start mongod
+
+# Verify
+mongosh</code></pre>
+
+                <h4>2. Start Backend</h4>
+                <pre><code>cd backend/InventoryAPI
+dotnet restore
+dotnet run</code></pre>
+                <p>Backend runs on <code>http://localhost:5236</code></p>
+
+                <h4>3. Start Frontend</h4>
+                <pre><code>cd frontend
+npm install
+npm run dev</code></pre>
+                <p>Frontend runs on <code>http://localhost:3009</code></p>
+
+                <div class="alert alert-success">
+                    <strong>✅ Access:</strong> Open <code>http://localhost:3009</code> in your browser
+                </div>
+            </section>
+
+            <section id="api">
+                <h2>📡 API Endpoints</h2>
+                <p>Base URL: <code>http://localhost:5236/api</code></p>
+
+                <h3>Authentication</h3>
+                <table>
+                    <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+                    <tr><td>POST</td><td><code>/auth/register</code></td><td>Register user</td></tr>
+                    <tr><td>POST</td><td><code>/auth/login</code></td><td>Login</td></tr>
+                </table>
+
+                <h3>Products</h3>
+                <table>
+                    <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+                    <tr><td>GET</td><td><code>/products</code></td><td>Get all products</td></tr>
+                    <tr><td>GET</td><td><code>/products/{id}</code></td><td>Get product by ID</td></tr>
+                    <tr><td>POST</td><td><code>/products</code></td><td>Create product</td></tr>
+                    <tr><td>PUT</td><td><code>/products/{id}</code></td><td>Update product</td></tr>
+                    <tr><td>DELETE</td><td><code>/products/{id}</code></td><td>Delete product</td></tr>
+                </table>
+
+                <h3>Other Endpoints</h3>
+                <ul>
+                    <li><code>/categories</code> - Category management</li>
+                    <li><code>/warehouses</code> - Warehouse management</li>
+                    <li><code>/shops</code> - Shop management</li>
+                    <li><code>/warehouse-stocks</code> - Stock tracking</li>
+                    <li><code>/sales</code> - Sales transactions</li>
+                    <li><code>/purchases</code> - Purchase orders</li>
+                    <li><code>/customers</code> - Customer management</li>
+                    <li><code>/suppliers</code> - Supplier management</li>
+                    <li><code>/transfer-orders</code> - Stock transfers</li>
+                    <li><code>/installments</code> - Installment plans</li>
+                    <li><code>/refunds</code> - Refund processing</li>
+                    <li><code>/cash-registers</code> - Cash management</li>
+                    <li><code>/customer-ledger/{id}</code> - Customer ledger</li>
+                    <li><code>/supplier-ledger/{id}</code> - Supplier ledger</li>
+                </ul>
+            </section>
+
+            <section id="deploy">
+                <h2>🚀 Deployment</h2>
+                
+                <h3>Docker Deployment</h3>
+                <pre><code># Build images
+docker build -t inventory-backend ./backend/InventoryAPI
+docker build -t inventory-frontend ./frontend
+
+# Run with Docker Compose
+docker-compose up -d</code></pre>
+
+                <h3>Production Setup</h3>
+                <ol>
+                    <li>Build Docker images</li>
+                    <li>Configure environment variables</li>
+                    <li>Set up SSL certificates</li>
+                    <li>Deploy to VM/Cloud</li>
+                    <li>Configure Nginx reverse proxy</li>
+                </ol>
+
+                <div class="alert alert-info">
+                    <strong>Note:</strong> See <code>DEPLOYMENT_GUIDE.md</code> for detailed instructions
+                </div>
+            </section>
+
+            <section id="troubleshoot">
+                <h2>🔧 Troubleshooting</h2>
+
+                <h3>MongoDB Connection Failed</h3>
+                <ul>
+                    <li>Verify MongoDB is running: <code>mongosh</code></li>
+                    <li>Check connection string in <code>appsettings.json</code></li>
+                    <li>Default: <code>mongodb://localhost:27017</code></li>
+                </ul>
+
+                <h3>Backend Not Starting</h3>
+                <ul>
+                    <li>Check .NET version: <code>dotnet --version</code></li>
+                    <li>Restore: <code>dotnet restore</code></li>
+                    <li>Check port 5236 is available</li>
+                </ul>
+
+                <h3>Frontend Issues</h3>
+                <ul>
+                    <li>Check Node version: <code>node --version</code></li>
+                    <li>Reinstall: <code>rm -rf node_modules && npm install</code></li>
+                    <li>Verify API URL in <code>src/lib/config.ts</code></li>
+                    <li>Check browser console (F12) for errors</li>
+                </ul>
+
+                <h3>Port Conflicts</h3>
+                <pre><code># Find process using port
+lsof -i :3009
+lsof -i :5236
+lsof -i :27017
+
+# Kill process
+kill -9 &lt;PID&gt;</code></pre>
+
+                <h3>Quick Debug Commands</h3>
+                <pre><code># Test backend
+curl http://localhost:5236/api/products
+
+# Test frontend
+curl http://localhost:3009
+
+# Check Docker
+docker-compose ps
+docker-compose logs</code></pre>
+            </section>
+
+            <section>
+                <h2>📝 Additional Resources</h2>
+                <ul>
+                    <li><code>README.md</code> - Project overview</li>
+                    <li><code>BUSINESS_OVERVIEW.md</code> - Business documentation</li>
+                    <li><code>LOCAL_SETUP_GUIDE.md</code> - Detailed setup</li>
+                    <li><code>DEPLOYMENT_GUIDE.md</code> - Deployment guide</li>
+                    <li><code>QUICK_REFERENCE.md</code> - Quick commands</li>
+                </ul>
+
+                <div class="alert alert-success">
+                    <strong>📄 To PDF:</strong> Press Ctrl+P (Cmd+P on Mac) → "Save as PDF"
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Navigation highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.sidebar a');
+
+        function highlightNav() {
+            let current = '';
+            sections.forEach(section => {
+                if (window.pageYOffset >= section.offsetTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightNav);
+        window.addEventListener('load', highlightNav);
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

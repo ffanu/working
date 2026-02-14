@@ -1,0 +1,26 @@
+{
+  "name": "Inventory Management System",
+  "short_name": "InventoryApp",
+  "description": "Comprehensive inventory management system with advanced analytics and reporting",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["business", "productivity", "finance"],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "icons": [],
+  "shortcuts": [],
+  "screenshots": [],
+  "features": [
+    "Cross Platform",
+    "fast",
+    "simple"
+  ],
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
+}

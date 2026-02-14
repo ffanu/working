@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Secrets
+backend/InventoryAPI/private-key.pem
+
+# .NET build outputs
+backend/InventoryAPI/bin/
+backend/InventoryAPI/obj/
+
+# Local env files
+.env*
+!.env.example
+
+# Backup git dirs
+**/.git.bak/

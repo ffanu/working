@@ -1,0 +1,427 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Mobile-specific optimizations */
+@layer utilities {
+  /* Touch-friendly button sizes */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Mobile-friendly input heights */
+  .mobile-input {
+    height: 48px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Mobile-friendly spacing */
+  .mobile-spacing {
+    padding: 16px;
+    margin: 8px;
+  }
+  
+  /* Mobile-friendly card spacing */
+  .mobile-card {
+    margin: 8px;
+    border-radius: 12px;
+  }
+  
+  /* Mobile-friendly button spacing */
+  .mobile-button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  /* Mobile-friendly form spacing */
+  .mobile-form {
+    gap: 16px;
+  }
+  
+  /* Mobile-friendly text sizes */
+  .mobile-text-sm {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .mobile-text-base {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .mobile-text-lg {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  
+  .mobile-text-xl {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  
+  .mobile-text-2xl {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+/* Mobile-specific media queries */
+@media (max-width: 768px) {
+  /* Ensure proper touch targets */
+  button, input, select, textarea {
+    min-height: 44px;
+  }
+  
+  /* Improve mobile form layout */
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Mobile-friendly spacing */
+  .space-y-4 > * + * {
+    margin-top: 16px;
+  }
+  
+  .space-y-6 > * + * {
+    margin-top: 24px;
+  }
+  
+  /* Mobile-friendly padding */
+  .p-4 {
+    padding: 16px;
+  }
+  
+  .p-6 {
+    padding: 20px;
+  }
+  
+  .p-8 {
+    padding: 24px;
+  }
+  
+  /* Mobile-friendly margins */
+  .m-4 {
+    margin: 16px;
+  }
+  
+  .mx-2 {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  
+  /* Mobile-friendly card styling */
+  .shadow-xl {
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Mobile-friendly input styling */
+  input, select, textarea {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    border-radius: 8px;
+  }
+  
+  /* Mobile-friendly button styling */
+  button {
+    border-radius: 8px;
+    font-weight: 500;
+  }
+  
+  /* Mobile-friendly alert styling */
+  .alert {
+    border-radius: 8px;
+    margin: 8px 0;
+  }
+  
+  /* Mobile-friendly card styling */
+  .card {
+    border-radius: 12px;
+    margin: 8px;
+  }
+}
+
+/* iOS-specific optimizations */
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari specific styles */
+  input, select, textarea {
+    -webkit-appearance: none;
+    border-radius: 8px;
+  }
+  
+  button {
+    -webkit-appearance: none;
+    border-radius: 8px;
+  }
+  
+  /* Fix iOS input zoom */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"] {
+    font-size: 16px !important;
+  }
+}
+
+/* Android-specific optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Android Chrome specific styles */
+  input, select, textarea {
+    border-radius: 8px;
+  }
+  
+  button {
+    border-radius: 8px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Touch device specific styles */
+  button:hover {
+    transform: none;
+  }
+  
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+  
+  /* Improve touch feedback */
+  button:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Print styles for invoice */
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+  
+  /* Hide the entire layout wrapper */
+  .flex.h-screen.bg-gray-50 {
+    display: block !important;
+    height: auto !important;
+    background: white !important;
+  }
+  
+  /* Hide sidebar completely */
+  .flex.h-full.w-64 {
+    display: none !important;
+  }
+  
+  /* Make main content take full width */
+  .flex-1.overflow-auto {
+    flex: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .container {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Hide all buttons and navigation elements */
+  button, .flex.justify-between.items-center, .print\\:hidden {
+    display: none !important;
+  }
+  
+  /* Ensure invoice takes full page */
+  .max-w-5xl {
+    max-width: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Remove shadows and borders for clean print */
+  .shadow-lg, .border-4, .border-blue-300 {
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  /* Ensure text is black for better print contrast */
+  .text-gray-600, .text-gray-700 {
+    color: black !important;
+  }
+  
+  /* Force page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+  
+  /* Ensure proper spacing for print */
+  .p-8, .px-8, .py-8 {
+    padding: 20px !important;
+  }
+  
+  .mb-6, .pb-6, .pb-8 {
+    margin-bottom: 20px !important;
+  }
+  
+  /* Ensure tables don't break across pages */
+  table {
+    page-break-inside: avoid;
+  }
+  
+  /* Additional print optimizations */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Ensure proper page margins */
+  @page {
+    margin: 0.5in;
+    size: A4;
+  }
+  
+  /* Hide any remaining UI elements */
+  nav, header, footer {
+    display: none !important;
+  }
+  
+  /* Ensure invoice content is properly formatted */
+  .bg-gradient-to-br, .bg-gradient-to-r {
+    background: white !important;
+  }
+  
+  /* Remove any background colors that might interfere with printing */
+  .bg-blue-50, .bg-purple-50, .bg-gray-50, .bg-gray-100 {
+    background: white !important;
+  }
+  
+  /* Ensure proper text colors for print */
+  .text-gray-900, .text-gray-800, .text-gray-700 {
+    color: black !important;
+  }
+  
+  /* Ensure proper border colors for print */
+  .border-gray-200, .border-gray-300 {
+    border-color: #d1d5db !important;
+  }
+  
+  /* Force proper spacing for print */
+  .space-y-1 > * + * {
+    margin-top: 0.25rem !important;
+  }
+  
+  .space-y-2 > * + * {
+    margin-top: 0.5rem !important;
+  }
+  
+  .space-y-3 > * + * {
+    margin-top: 0.75rem !important;
+  }
+  
+  .space-y-4 > * + * {
+    margin-top: 1rem !important;
+  }
+  
+  /* Ensure proper table formatting */
+  th, td {
+    padding: 0.5rem 1rem !important;
+    border-bottom: 1px solid #d1d5db !important;
+  }
+  
+  /* Ensure proper card formatting */
+  .card, .Card {
+    box-shadow: none !important;
+    border: 1px solid #d1d5db !important;
+  }
+}
+
+/* Print preview styles (for testing print layout) */
+.print-preview {
+  background: white !important;
+  box-shadow: none !important;
+  border: 1px solid #d1d5db !important;
+}
+
+.print-preview .bg-gradient-to-br,
+.print-preview .bg-gradient-to-r {
+  background: white !important;
+}
+
+.print-preview .bg-blue-50,
+.print-preview .bg-purple-50,
+.print-preview .bg-gray-50,
+.print-preview .bg-gray-100 {
+  background: white !important;
+}
+
+.print-preview .shadow-lg {
+  box-shadow: none !important;
+}
+
+.print-preview .border-4 {
+  border-width: 1px !important;
+  border-color: #d1d5db !important;
+}
