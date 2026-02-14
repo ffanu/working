@@ -6,6 +6,7 @@
 
 # Secrets
 backend/InventoryAPI/private-key.pem
+backend/InventoryAPI/public-key.pem
 
 # .NET build outputs
 backend/InventoryAPI/bin/
